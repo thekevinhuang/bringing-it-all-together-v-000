@@ -54,7 +54,7 @@ class Dog
   end
 
   def self.create(attributes)
-    new_doggie = Dog.new(attributes[:name],attributes[:breed])
+    new_doggie = Dog.new(attributes[name],attributes[breed])
     new_doggie.save
     new_doggie
   end
