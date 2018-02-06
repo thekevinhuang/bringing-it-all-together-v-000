@@ -54,9 +54,7 @@ class Dog
   end
 
   def self.create(attr_hash)
-    attr_hash.each do |k,v|
-      instance_variable_set("@#{k}",v) unless v.nil?
-    end
+    new_pup = Dog.new(name: attr_hash[:name], breed: attr_hash[:breed])
   end
 
 end
