@@ -53,8 +53,10 @@ class Dog
     DB[:conn].execute(sql,self.name, self.breed, self.id)
   end
 
-  def self.create(attributes)
-    new_doggie = Dog.new(attributes[:name],attributes[:breed])
+  def self.create(attr_hash)
+    name = attr_hash[:name]
+    breed = attr_hash[:breed]
+    new_doggie = self.new(name, breed)
     new_doggie.save
     new_doggie
   end
